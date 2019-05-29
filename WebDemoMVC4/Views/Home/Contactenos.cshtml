@@ -1,0 +1,121 @@
+﻿
+@{
+    ViewBag.Title = "Contactenos";
+}
+
+@*<h2>Contactenos</h2>*@
+
+<!-- START SECTION -->
+<div id="contact" class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                @*<h2 class="section-title">Contact Us</h2>*@
+                <form id="contactForm" data-toggle="validator" method="post" class="form">
+                    <input class="form-control" id="name" name="name" placeholder="Name" type="text" required />
+                    <div class="help-block with-errors"></div>
+                    <input class="form-control" id="email" name="email" placeholder="Email" type="email" required />
+                    <div class="help-block with-errors"></div>
+                    <textarea class="form-control" id="message" name="message" placeholder="Message" rows="5"></textarea>
+                    <div class="help-block with-errors"></div>
+                    <button class="btn btn-primary" type="submit">enviar</button>
+                    <div id="msgSubmit" class="h3 text-center hidden"></div>
+                    <div class="clearfix"></div>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <div id="map"></div>
+            </div>
+        </div><!--/.row-->
+    </div><!--/.container-->
+    <div class="absolute-md absolute-wrapper zero-col hidden-sm">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-5 col-md-offset-7">
+                    @*<div id="map"></div>*@
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--/.section -->
+<!-- START SECTION -->
+<div class="section footer background-brand dark-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <h3 class="text-uppercase font-size-sm letter-spacing-md font-weight-lg margin-bottom-md ">Acerca de nosotros</h3>
+                <p>Ejecutar los proyectos de instalación y mantenimiento de equipos industriales de GNC a nivel nacional, con eficacia, cumpliendo los plazos para lograr que las empresas industriales, comerciales y de servicio, cuenten con la seguridad de conexiones para transportar un combustible eficiente, limpio y con un menor coste de operación.</p>
+            </div>
+            <div class="col-md-3 col-md-offset-1">
+                <h3 class="text-uppercase font-size-sm letter-spacing-md font-weight-lg margin-bottom-md ">Contacto</h3>
+                <address>
+                    <strong>Informacion "SEGURinter"</strong><br>
+                    <strong>Departamento.</strong> Cochabamba<br>
+                    <Strong>Ciudad.</Strong> Cercado <br />
+                    <Strong>Provincia.</Strong> Quillacollo <br />
+                    <Strong>Municipio.</Strong> Vinto <br />
+                   
+                    <abbr title="Phone">Telefono:</abbr> (591) (4) 4357015 <br>
+                    <abbr title="Phone">Celular:</abbr> (591) 70341587 – 71440062<br>
+                    <a  href="mailto:#" style="color: #f2f3f5;
+    text-decoration: none;">segurinterbolivia@hotmail.com</a>
+                    <Strong>Direccion.</Strong> Calle Cochabamba s/n Vinto - Cochabamba
+                </address>
+            </div>
+            <div class="col-md-4 col-md-offset-1">
+                <h1 class="contact"></h1>
+                <p>Nuestro canal: <a href="#" style="color: #f2f3f5;
+    text-decoration: none;">suportinteryoutube.com</a></p>
+                <p>Llamanos: <a href="#" style="color: #f2f3f5;
+    text-decoration: none;">(591) (4) 4357015 </a></p>
+                <h2 class="lettert"> Redes Sociales</h2>
+
+                <a style="color: #050b0c;
+    " href="https://www.facebook.com"><i class="fab fa-facebook-square fa-3x social-fb" id="social"></i></a>
+                <a style="color: #050b0c;
+    " href="https://www.twitter.com"><i class="fab fa-twitter-square fa-3x social-tw" id="social"></i></a>
+                <a style="color: #050b0c;
+    " href="https://www.facebook.com"><i class="fab fa-google-plus-square fa-3x social-gp" id="social"></i></a>
+                <a style="color: #050b0c;
+    " href="https://www.support@yout.com"><i class="fa fa-envelope-square fa-3x social-em" id="social"></i></a>
+                @*<h3 class="margin-bottom-md">LOREM IPSUM DOLOR SITE AMET CONESTETUR ADIPISCING</h3>
+        <p class="lead">Lorem, Ipsum, Dolor.</p>
+        <p class="home-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam id ex est. Nullam mattis mauris quis ipsum elementum</p>*@
+            </div>
+            <div class="col-md-12 margin-top-md margin-bottom-md" style="opacity: .2;">
+                <hr />
+            </div>
+            <div class="col-md-12 margin-top-md text-center letter-spacing-md font-size-sm text-upercase">
+                <p>COPYRIGHT © 2018 Qhanati</p>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    #map {
+        height: 500px;
+        width: 600px;
+    }
+    .background-brand {
+        background-color: #2196F3;
+    }
+</style>
+<script>
+    var map;
+    function initMap() {
+        var milat = { lat: -17.3937906, lng: -66.3192586 };
+        map = new google.maps.Map(document.getElementById('map'), {
+            center: { lat: -17.3951632, lng: -66.3163292 },
+            zoom: 15
+        });
+        var marker = new google.maps.Marker({
+            position: milat,
+           map:map,
+            title: "Oficina Central SEGURinter",
+            icon: 'http://cdn.webiconset.com/map-icons/images/pin2.png'
+        });
+    }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBck-3uNAjfPcOQX1GIKp7nyvjepgNuXA&callback=initMap"
+        async defer></script>
